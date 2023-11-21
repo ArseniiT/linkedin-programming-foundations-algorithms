@@ -45,6 +45,16 @@ class Linkedlist(object):
     def delete_at(self, id):
         if id > self.count - 1:
             return
+        if id == 0:
+            self.head = self.head.next()
+        else:
+            idTmp = 0
+            node = self.head
+            while idTmp < id-1:
+                node = node.get_next()
+                idTmp += 1
+            node.set_next(node.get_next().get_next())
+            self.count -= 1
 
     def dump_list(self):
         tempnode = self.head
@@ -60,11 +70,15 @@ itemlist.insert(10)
 itemlist.insert(15)
 itemlist.dump_list()
 
-# test the linkedlist
-print("Item count: ", itemlist.get_count())
-print("Finding item: ", itemlist.find(13))
-print("Finding item: ", itemlist.find(26))
+# test get and find in the linkedlist
+# print("Item count: ", itemlist.get_count())
+# print("Finding item: ", itemlist.find(13))
+# print("Finding item: ", itemlist.find(26))
 
-# delete from the linkedlist
+# test delete from the linkedlist
+itemlist.delete_at(3)
+print("Item count: ", itemlist.get_count())
+print("Find item: ", itemlist.find(30))
+itemlist.dump_list()
 
 
