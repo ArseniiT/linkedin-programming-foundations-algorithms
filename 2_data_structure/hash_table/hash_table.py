@@ -15,3 +15,5 @@ items2["key2"] = 6
 print(items2)
 
 # iterate the keys and values in the disctionary
+for key, value in items2.items():
+    print("Key: " , key, ", value: ", value)

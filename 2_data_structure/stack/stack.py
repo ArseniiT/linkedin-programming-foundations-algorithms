@@ -1,4 +1,4 @@
-# TODO: create a new empty stack
+# new empty stack
 stack = []
 
 # push items into the stack
