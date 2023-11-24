@@ -6,7 +6,9 @@ def quickSort(arr, first, last):
         pivotIndex = partition(arr, first, last)
 
         # sort the two partition
+        # sort the right part
         quickSort(arr, first, pivotIndex - 1)
+        # sort the left part
         quickSort(arr, pivotIndex + 1, last)
 
 
